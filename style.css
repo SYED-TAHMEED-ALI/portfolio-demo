@@ -6,84 +6,74 @@
 }
 
 body {
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
   color: white;
 }
 
-header {
-  text-align: center;
-  padding: 60px 20px;
+/* NAVBAR */
+.navbar {
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-header h1 {
-  font-size: 3rem;
+.navbar h1 {
+  font-size: 1.8rem;
 }
 
-header p {
-  opacity: 0.8;
-}
-
-.team {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  padding: 40px;
-}
-
-.card {
-  background: rgba(255,255,255,0.08);
-  border-radius: 20px;
-  padding: 25px;
-  backdrop-filter: blur(10px);
-  transition: transform 0.4s, box-shadow 0.4s;
-  animation: fadeUp 1s ease forwards;
-}
-
-.card:hover {
-  transform: translateY(-15px) scale(1.03);
-  box-shadow: 0 25px 40px rgba(0,0,0,0.4);
-}
-
-.card img {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
+.profiles img {
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  margin-bottom: 15px;
-  border: 3px solid #00c6ff;
+  margin-left: 15px;
+  cursor: pointer;
+  border: 3px solid transparent;
+  transition: 0.3s;
 }
 
-.card h2 {
-  font-size: 1.3rem;
+.profiles img:hover {
+  transform: scale(1.1);
+  border-color: #00c6ff;
 }
 
-.role {
+/* PROFILE SECTION */
+.profile {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+  animation: fadeUp 0.8s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+.profile-card {
+  background: rgba(255,255,255,0.08);
+  padding: 30px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 700px;
+  backdrop-filter: blur(10px);
+}
+
+.profile-card h2 {
+  font-size: 2rem;
   color: #00c6ff;
-  font-size: 0.9rem;
-  margin-bottom: 10px;
 }
 
-.desc {
-  font-size: 0.85rem;
-  opacity: 0.9;
-  margin-bottom: 10px;
+.profile-card .box {
+  margin-top: 20px;
 }
 
-.card ul {
+.profile-card ul {
   list-style: none;
-  font-size: 0.85rem;
-  margin-bottom: 10px;
 }
 
-.card ul li::before {
+.profile-card li::before {
   content: "▹ ";
   color: #00c6ff;
-}
-
-footer {
-  text-align: center;
-  padding: 30px;
-  opacity: 0.7;
 }
 
 @keyframes fadeUp {
