@@ -1,53 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>CS Portfolio | 2026</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CS Portfolio Collective</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">CS Collective</a>
+        <div class="nav-links">
+            <a href="#team">Team</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
 
-<!-- NAVBAR -->
-<nav class="navbar">
-  <h1>Our Portfolio</h1>
-  <div class="profiles">
-    <img src="images/tahmeed.jpg" onclick="showProfile('tahmeed')" />
-    <img src="images/sabiha.jpg" onclick="showProfile('sabiha')" />
-    <img src="images/placeholder.png" />
-    <img src="images/placeholder.png" />
-    <img src="images/placeholder.png" />
-  </div>
-</nav>
+    <header class="hero">
+        <h1 class="hero-title">Computer Science Portfolios</h1>
+        <p class="hero-sub">Profiles and projects from five CS professionals — explore skills, projects, and contact info.</p>
+    </header>
 
-<!-- PROFILE DETAILS -->
-<section id="profile" class="profile hidden">
-  <div class="profile-card">
-    <h2 id="name"></h2>
-    <p id="role"></p>
+    <main>
+      <section id="team" class="team-grid">
+        <a href="tahmeed.html" class="member-card" style="--accent: #00D9FF;">
+            <div class="avatar">ST</div>
+            <h3>Syed Tahmeed Ali</h3>
+            <p class="role">Full Stack Developer</p>
+            <p class="cta">VIEW PROFILE →</p>
+        </a>
 
-    <div class="box">
-      <h3>About</h3>
-      <p id="about"></p>
-    </div>
+        <a href="sabiha.html" class="member-card" style="--accent: #00FF88;">
+            <div class="avatar">SY</div>
+            <h3>Sabiha Yaseen</h3>
+            <p class="role">UI/UX Designer</p>
+            <p class="cta">VIEW PROFILE →</p>
+        </a>
 
-    <div class="box">
-      <h3>Skills</h3>
-      <ul id="skills"></ul>
-    </div>
+        <a href="wasay.html" class="member-card" style="--accent: #FF6B35;">
+            <div class="avatar">WA</div>
+            <h3>Wasay Ahmad</h3>
+            <p class="role">Data Scientist</p>
+            <p class="cta">VIEW PROFILE →</p>
+        </a>
 
-    <div class="box">
-      <h3>Projects</h3>
-      <ul id="projects"></ul>
-    </div>
+        <a href="misbah.html" class="member-card" style="--accent: #FF006E;">
+            <div class="avatar">MI</div>
+            <h3>M Isbah</h3>
+            <p class="role">Cloud Engineer</p>
+            <p class="cta">VIEW PROFILE →</p>
+        </a>
 
-    <div class="box">
-      <h3>Contact</h3>
-      <p id="contact"></p>
-    </div>
-  </div>
-</section>
+        <a href="fatima.html" class="member-card" style="--accent: #FFBE0B;">
+            <div class="avatar">FA</div>
+            <h3>Fatima</h3>
+            <p class="role">Security Engineer</p>
+            <p class="cta">VIEW PROFILE →</p>
+        </a>
+      </section>
 
-<script src="script.js"></script>
-</body>
+      <section id="contact" class="contact-section">
+        <div class="contact-card">
+          <h3>Contact</h3>
+          <p class="muted">Want to collaborate? Replace this email with your contact address.</p>
+          <p><a href="mailto:hello@example.com" class="contact-link">hello@example.com</a></p>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
 </html>

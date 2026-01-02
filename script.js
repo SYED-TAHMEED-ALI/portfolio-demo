@@ -1,35 +1,41 @@
-const data = {
-  tahmeed: {
-    name: "Syed Tahmeed Ali",
-    role: "Flutter Developer | AI Enthusiast",
-    about: "Final year Computer Science student graduating Jan 2026. Passionate about AI-based systems, Flutter apps, and UI/UX.",
-    skills: ["Flutter & Firebase", "Python", "Machine Learning", "UI/UX Design"],
-    projects: ["AI Attendance System", "Face Recognition App", "Flutter Mobile Apps"],
-    contact: "Email: tahmeed@email.com"
-  },
-  sabiha: {
-    name: "Sabiha Yaseen",
-    role: "UI/UX Designer | Web Developer",
-    about: "Creative CS student focused on usability, modern UI design, and web development.",
-    skills: ["HTML, CSS, JS", "UI/UX Research", "Figma", "Usability Testing"],
-    projects: ["WhatsApp Premium Redesign", "Portfolio Website", "UX Case Studies"],
-    contact: "Email: sabiha@email.com"
-  }
-};
+// script.js
+document.addEventListener("DOMContentLoaded", () => {
+    const observerOptions = { threshold: 0.12 };
 
-function showProfile(person) {
-  const profile = document.getElementById("profile");
-  profile.classList.remove("hidden");
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                const fills = entry.target.querySelectorAll('.progress-fill');
+                fills.forEach(fill => {
+                    fill.style.width = fill.getAttribute('data-width');
+                });
+            }
+        });
+    }, observerOptions);
 
-  document.getElementById("name").innerText = data[person].name;
-  document.getElementById("role").innerText = data[person].role;
-  document.getElementById("about").innerText = data[person].about;
+    document.querySelectorAll('.reveal, .skill-box, .project-card, .member-card').forEach(el => {
+        observer.observe(el);
+    });
 
-  document.getElementById("skills").innerHTML =
-    data[person].skills.map(s => `<li>${s}</li>`).join("");
+    // Smooth scroll for nav links
+    document.querySelectorAll('.nav-links a').forEach(a => {
+        a.addEventListener('click', (e) => {
+            e.preventDefault();
+            const href = a.getAttribute('href');
+            if (href && href.startsWith('#')) document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+        });
+    });
 
-  document.getElementById("projects").innerHTML =
-    data[person].projects.map(p => `<li>${p}</li>`).join("");
-
-  document.getElementById("contact").innerText = data[person].contact;
-}
+    // Small typing effect for hero-sub title
+    const heroSub = document.querySelector('.hero-sub');
+    if (heroSub) {
+        const full = heroSub.textContent.trim();
+        heroSub.textContent = '';
+        let i = 0;
+        const t = setInterval(() => {
+            heroSub.textContent += full[i++] || '';
+            if (i >= full.length) clearInterval(t);
+        }, 18);
+    }
+});
