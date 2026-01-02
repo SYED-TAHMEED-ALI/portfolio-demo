@@ -27,6 +27,24 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="stars"></div>
+        <!-- Image Carousel -->
+        <div class="carousel-container">
+            <div class="carousel-slide active" style="background-image: url('images/tahmeed.jpg')"></div>
+            <div class="carousel-slide" style="background-image: url('images/sabiha.jpg')"></div>
+            <div class="carousel-slide" style="background-image: url('images/wasay.jpg')"></div>
+            <div class="carousel-slide" style="background-image: url('images/misbah.jpg')"></div>
+            <div class="carousel-slide" style="background-image: url('images/fatima.jpg')"></div>
+            <div class="carousel-overlay"></div>
+            <button class="carousel-btn prev" onclick="prevSlide()">❮</button>
+            <button class="carousel-btn next" onclick="nextSlide()">❯</button>
+            <div class="carousel-dots">
+                <span class="dot active" onclick="currentSlide(0)"></span>
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
+        </div>
         <div class="hero-content">
             <h1 class="hero-title">
                 <span class="word">Computer</span>
@@ -50,7 +68,7 @@
             <a href="tahmeed.html" class="team-card card-1">
                 <div class="card-glow"></div>
                 <div class="card-content">
-                    <div class="avatar avatar-1">ST</div>
+                    <div class="avatar avatar-1" style="background-image: url('images/tahmeed.jpg')"></div>
                     <h3>Syed Tahmeed Ali</h3>
                     <p class="role">Full Stack Developer</p>
                     <p class="description">Expert in scalable web applications and modern frameworks</p>
@@ -65,7 +83,7 @@
             <a href="sabiha.html" class="team-card card-2">
                 <div class="card-glow"></div>
                 <div class="card-content">
-                    <div class="avatar avatar-2">SY</div>
+                    <div class="avatar avatar-2" style="background-image: url('images/sabiha.jpg')"></div>
                     <h3>Sabiha Yaseen</h3>
                     <p class="role">UI/UX Designer</p>
                     <p class="description">Crafting beautiful interfaces with exceptional user experiences</p>
@@ -80,7 +98,7 @@
             <a href="wasay.html" class="team-card card-3">
                 <div class="card-glow"></div>
                 <div class="card-content">
-                    <div class="avatar avatar-3">WA</div>
+                    <div class="avatar avatar-3" style="background-image: url('images/wasay.jpg')"></div>
                     <h3>Wasay Ahmad</h3>
                     <p class="role">Data Scientist</p>
                     <p class="description">Unlocking insights through machine learning and analytics</p>
@@ -95,7 +113,7 @@
             <a href="misbah.html" class="team-card card-4">
                 <div class="card-glow"></div>
                 <div class="card-content">
-                    <div class="avatar avatar-4">MI</div>
+                    <div class="avatar avatar-4" style="background-image: url('images/misbah.jpg')"></div>
                     <h3>M Isbah</h3>
                     <p class="role">Cloud Engineer</p>
                     <p class="description">Building resilient infrastructure for global scale systems</p>
@@ -110,7 +128,7 @@
             <a href="fatima.html" class="team-card card-5">
                 <div class="card-glow"></div>
                 <div class="card-content">
-                    <div class="avatar avatar-5">FA</div>
+                    <div class="avatar avatar-5" style="background-image: url('images/fatima.jpg')"></div>
                     <h3>Fatima</h3>
                     <p class="role">Security Engineer</p>
                     <p class="description">Protecting systems and data through advanced security measures</p>

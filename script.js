@@ -1,5 +1,59 @@
 // Advanced script for CS Elite Portfolio
+let currentSlideIndex = 0;
+let autoSlideInterval;
+
+function nextSlide() {
+    showSlide(++currentSlideIndex);
+}
+
+function prevSlide() {
+    showSlide(--currentSlideIndex);
+}
+
+function currentSlide(n) {
+    showSlide(currentSlideIndex = n);
+}
+
+function showSlide(n) {
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.dot');
+    
+    if (n >= slides.length) currentSlideIndex = 0;
+    if (n < 0) currentSlideIndex = slides.length - 1;
+    
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+    
+    if (slides[currentSlideIndex]) {
+        slides[currentSlideIndex].classList.add('active');
+    }
+    if (dots[currentSlideIndex]) {
+        dots[currentSlideIndex].classList.add('active');
+    }
+}
+
+function startAutoSlide() {
+    autoSlideInterval = setInterval(() => {
+        nextSlide();
+    }, 6000);
+}
+
+function stopAutoSlide() {
+    clearInterval(autoSlideInterval);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize carousel
+    showSlide(0);
+    startAutoSlide();
+    
+    // Stop auto-slide on user interaction
+    const carouselContainer = document.querySelector('.carousel-container');
+    if (carouselContainer) {
+        carouselContainer.addEventListener('mouseenter', stopAutoSlide);
+        carouselContainer.addEventListener('mouseleave', startAutoSlide);
+    }
+
     // Intersection Observer for reveal animations
     const observerOptions = {
         threshold: 0.15,
