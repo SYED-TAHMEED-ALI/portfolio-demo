@@ -489,10 +489,13 @@ body {
     font-weight: 700;
     margin-bottom: 1.5rem;
     position: relative;
-    border: 2px solid;
+    border: 3px solid;
     background-size: cover;
     background-position: center;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-repeat: no-repeat;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    animation: pulse 3s ease-in-out infinite;
 }
 
 .card-1 .avatar,
@@ -511,16 +514,13 @@ body {
 .card-5 { --card-color: var(--accent-yellow); }
 
 .avatar {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
     border-color: var(--card-color);
     color: var(--card-color);
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5), inset 0 0 30px var(--card-color);
-    animation: pulse 3s ease-in-out infinite;
 }
 
 @keyframes pulse {
-    0%, 100% { box-shadow: 0 0 30px rgba(0, 0, 0, 0.5), inset 0 0 30px var(--card-color); }
-    50% { box-shadow: 0 0 50px var(--card-color), inset 0 0 30px var(--card-color); }
+    0%, 100% { box-shadow: 0 0 30px rgba(0, 0, 0, 0.5), inset 0 0 20px var(--card-color); }
+    50% { box-shadow: 0 0 50px var(--card-color), inset 0 0 20px var(--card-color); }
 }
 
 .team-card:hover .avatar {
