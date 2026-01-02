@@ -2,71 +2,141 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CS Portfolio Collective</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS Elite Portfolio | Five Innovators in Computer Science</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Animated gradient background -->
+    <div class="animated-background"></div>
+    
+    <!-- Navigation -->
     <nav class="navbar">
-        <a href="index.html" class="logo">CS Collective</a>
-        <div class="nav-links">
-            <a href="#team">Team</a>
-            <a href="#contact">Contact</a>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">⚡</span>
+                <span>CS Elite</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#team" class="nav-link">Team</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
         </div>
     </nav>
 
-    <header class="hero">
-        <h1 class="hero-title">Computer Science Portfolios</h1>
-        <p class="hero-sub">Profiles and projects from five CS professionals — explore skills, projects, and contact info.</p>
-    </header>
-
-    <main>
-      <section id="team" class="team-grid">
-        <a href="tahmeed.html" class="member-card" style="--accent: #00D9FF;">
-            <div class="avatar">ST</div>
-            <h3>Syed Tahmeed Ali</h3>
-            <p class="role">Full Stack Developer</p>
-            <p class="cta">VIEW PROFILE →</p>
-        </a>
-
-        <a href="sabiha.html" class="member-card" style="--accent: #00FF88;">
-            <div class="avatar">SY</div>
-            <h3>Sabiha Yaseen</h3>
-            <p class="role">UI/UX Designer</p>
-            <p class="cta">VIEW PROFILE →</p>
-        </a>
-
-        <a href="wasay.html" class="member-card" style="--accent: #FF6B35;">
-            <div class="avatar">WA</div>
-            <h3>Wasay Ahmad</h3>
-            <p class="role">Data Scientist</p>
-            <p class="cta">VIEW PROFILE →</p>
-        </a>
-
-        <a href="misbah.html" class="member-card" style="--accent: #FF006E;">
-            <div class="avatar">MI</div>
-            <h3>M Isbah</h3>
-            <p class="role">Cloud Engineer</p>
-            <p class="cta">VIEW PROFILE →</p>
-        </a>
-
-        <a href="fatima.html" class="member-card" style="--accent: #FFBE0B;">
-            <div class="avatar">FA</div>
-            <h3>Fatima</h3>
-            <p class="role">Security Engineer</p>
-            <p class="cta">VIEW PROFILE →</p>
-        </a>
-      </section>
-
-      <section id="contact" class="contact-section">
-        <div class="contact-card">
-          <h3>Contact</h3>
-          <p class="muted">Want to collaborate? Replace this email with your contact address.</p>
-          <p><a href="mailto:hello@example.com" class="contact-link">hello@example.com</a></p>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="stars"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="word">Computer</span>
+                <span class="word">Science</span>
+                <span class="word">Portfolio</span>
+                <span class="word">Collective</span>
+            </h1>
+            <p class="hero-subtitle">Five exceptional developers shaping the future of technology</p>
+            <button class="cta-button" onclick="document.getElementById('team').scrollIntoView({behavior:'smooth'})">
+                Explore Profiles
+                <span class="button-icon">→</span>
+            </button>
         </div>
-      </section>
-    </main>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team-section">
+        <h2 class="section-title">Meet The Team</h2>
+        <div class="team-grid">
+            <!-- Card 1 -->
+            <a href="tahmeed.html" class="team-card card-1">
+                <div class="card-glow"></div>
+                <div class="card-content">
+                    <div class="avatar avatar-1">ST</div>
+                    <h3>Syed Tahmeed Ali</h3>
+                    <p class="role">Full Stack Developer</p>
+                    <p class="description">Expert in scalable web applications and modern frameworks</p>
+                    <div class="card-footer">
+                        <span class="view-text">View Profile</span>
+                        <span class="arrow">→</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Card 2 -->
+            <a href="sabiha.html" class="team-card card-2">
+                <div class="card-glow"></div>
+                <div class="card-content">
+                    <div class="avatar avatar-2">SY</div>
+                    <h3>Sabiha Yaseen</h3>
+                    <p class="role">UI/UX Designer</p>
+                    <p class="description">Crafting beautiful interfaces with exceptional user experiences</p>
+                    <div class="card-footer">
+                        <span class="view-text">View Profile</span>
+                        <span class="arrow">→</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Card 3 -->
+            <a href="wasay.html" class="team-card card-3">
+                <div class="card-glow"></div>
+                <div class="card-content">
+                    <div class="avatar avatar-3">WA</div>
+                    <h3>Wasay Ahmad</h3>
+                    <p class="role">Data Scientist</p>
+                    <p class="description">Unlocking insights through machine learning and analytics</p>
+                    <div class="card-footer">
+                        <span class="view-text">View Profile</span>
+                        <span class="arrow">→</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Card 4 -->
+            <a href="misbah.html" class="team-card card-4">
+                <div class="card-glow"></div>
+                <div class="card-content">
+                    <div class="avatar avatar-4">MI</div>
+                    <h3>M Isbah</h3>
+                    <p class="role">Cloud Engineer</p>
+                    <p class="description">Building resilient infrastructure for global scale systems</p>
+                    <div class="card-footer">
+                        <span class="view-text">View Profile</span>
+                        <span class="arrow">→</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Card 5 -->
+            <a href="fatima.html" class="team-card card-5">
+                <div class="card-glow"></div>
+                <div class="card-content">
+                    <div class="avatar avatar-5">FA</div>
+                    <h3>Fatima</h3>
+                    <p class="role">Security Engineer</p>
+                    <p class="description">Protecting systems and data through advanced security measures</p>
+                    <div class="card-footer">
+                        <span class="view-text">View Profile</span>
+                        <span class="arrow">→</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <h2>Let's Collaborate</h2>
+            <p>Have a project in mind? Get in touch with our team</p>
+            <a href="mailto:hello@cselite.com" class="contact-button">Send us an email</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 CS Elite Portfolio. All rights reserved.</p>
+    </footer>
 
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
