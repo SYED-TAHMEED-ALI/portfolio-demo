@@ -4,6 +4,9 @@
     --card-bg: #161B22;
     --text-white: #FFFFFF;
     --text-gray: #8B949E;
+    --muted: #9aa6b2;
+    --glass: rgba(255,255,255,0.03);
+    --max-width: 1100px;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
@@ -11,9 +14,17 @@
 body {
     background-color: var(--bg-dark);
     color: var(--text-white);
-    font-family: 'Inter', sans-serif;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
+
+/* Reset link styles so page colors are intentional */
+a { color: inherit; text-decoration: none; }
+a:visited { color: inherit; }
+
+.container { max-width: var(--max-width); margin: 0 auto; }
 
 /* Animations */
 @keyframes fadeInUp {
@@ -40,35 +51,56 @@ body {
 .hero span { color: #00D9FF; }
 
 .team-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px; padding: 2rem 8% 5rem;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 28px; padding: 2rem 8% 5rem; align-items: start;
+    max-width: var(--max-width); margin: 0 auto;
 }
 
 .member-card {
-    background: var(--card-bg); padding: 40px 20px; border-radius: 15px;
-    text-align: center; border: 1px solid #30363D; text-decoration: none;
-    color: white; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent), var(--card-bg);
+    padding: 32px 20px; border-radius: 14px; text-align: left; border: 1px solid rgba(255,255,255,0.03);
+    color: inherit; transition: transform 0.45s cubic-bezier(.2,.9,.2,1), box-shadow .35s;
+    display: block; overflow: visible;
 }
 
-.member-card:hover { transform: translateY(-15px); border-color: var(--accent); box-shadow: 0 10px 40px -10px var(--accent); }
+.member-card:hover { transform: translateY(-10px); box-shadow: 0 18px 50px rgba(2,6,23,0.6); border-color: rgba(255,255,255,0.06); }
+.member-card .avatar { margin: 0 0 1rem 0; }
+.member-card h3 { margin: 0 0 6px 0; color: var(--text-white); }
+.member-card .role { margin: 0 0 10px 0; }
+.member-card .cta { margin-top: 6px; display:block; }
 
 .avatar {
     width: 100px; height: 100px; border-radius: 50%; border: 4px solid var(--accent);
     margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center;
     font-size: 2.5rem; font-weight: bold; background: #0d1117;
 }
+/* make avatar responsive to card layout */
+.member-card .avatar { width: 84px; height: 84px; border-width:3px; font-size:1.3rem; }
+
+/* subtle animated gradient on avatar border */
+.avatar { position: relative; overflow: hidden; }
+.avatar::before {
+    content: ''; position: absolute; inset: -40%; background: conic-gradient(from 120deg, #00D9FF, #00FF88, #FF6B35, #FF006E, #FFBE0B); opacity: .08; transform: rotate(0deg); transition: transform 1s linear;
+}
+.member-card:hover .avatar::before { transform: rotate(30deg); opacity: .12; }
 
 /* Skills & Progress */
-.skill-box { background: #1c2128; padding: 20px; border-radius: 10px; margin-bottom: 15px; }
+.skill-box { background: #111318; padding: 16px; border-radius: 10px; margin-bottom: 12px; border: 1px solid var(--glass); }
 .progress-container { background: #30363D; height: 8px; border-radius: 5px; margin-top: 10px; }
 .progress-fill { height: 100%; border-radius: 5px; width: 0; transition: width 2s ease-in-out; background: var(--accent); }
 
 /* Project Cards */
 .project-card {
-        background: var(--card-bg); border-radius: 12px; border: 1px solid #30363D;
-        overflow: hidden; transition: 0.3s;
+    background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent), var(--card-bg);
+    border-radius: 12px; border: 1px solid rgba(255,255,255,0.03);
+    overflow: hidden; transition: transform .35s, box-shadow .35s;
 }
+.project-card:hover { transform: translateY(-6px); box-shadow: 0 14px 40px rgba(1,6,16,0.55); }
 .project-img { width: 100%; height: 200px; background: #21262d; object-fit: cover; }
+
+/* reveal animation default */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .8s ease, transform .8s ease; }
+.reveal.active { opacity: 1; transform: translateY(0); }
 
 /* Additional layout + placeholders */
 .hero-title { font-size: 3rem; margin-bottom: 8px; }
